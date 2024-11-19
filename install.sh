@@ -27,7 +27,7 @@ if echo "$answer" | grep -iq "^y" ;then
    echo "[ADBRio] Setting attributes and permissions..."
    chown root:root /etc/init.d/adb.sh
    chmod 777 /etc/init.d/adb.sh
-   update-rc.d /etc/init.d/adb.sh defaults
+   update-rc.d adb.sh defaults
    chmod 777 /usr/bin/adb
    chmod 777 /usr/lib/android-sdk/platform-tools/adb
    echo "[ADBRio] Done. I'm almost there! X3"

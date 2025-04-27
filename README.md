@@ -8,6 +8,7 @@ A port of ADB for the NI RoboRIO. Intended for use in First Robotics Challenge.
 4. cd into the directory of the installer.
 5. Run the following commands:
 ```
+sed -i 's/\r$//' install.sh
 chmod 755 install.sh 
 ./install.sh
 ```

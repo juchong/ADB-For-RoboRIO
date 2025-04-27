@@ -4,13 +4,11 @@ if [[ $EUID -ne 0 ]]; then
 	exit 1
 fi
 if hash apt-get >/dev/null; then
-        echo "Adding FRC Toolchain repositories..."
-	add-apt-repository ppa:wpilib/toolchain
-	apt-get update
-	echo "Done."
 	echo "Installing FRC Toolchain..."
-	apt-get install frc-toolchain frcmake binutils-frc-armel-cross
-	apt-get install zlib1g-dev libssl-dev git make
+	apt-get update
+	apt-get install git make wget cmake ninja-build git python3 libz-dev libssl-dev libusb-1.0-0-dev
+	wget https://github.com/wpilibsuite/roborio-toolchain/releases/download/v2022-1/FRC-2022-Linux-Toolchain-7.3.0.tar.gz
+	tar zxvf FRC-2022-Linux-Toolchain-7.3.0.tar.gz
 	echo "Done."
 	echo "Please run build.sh to build ADB for your RoboRIO."
 else
